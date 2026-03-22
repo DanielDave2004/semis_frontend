@@ -10,7 +10,7 @@ submit.addEventListener('click', () => {
     let genre = document.querySelector("#genre").value;
     let year_release = document.querySelector("#year_release").value;
     let formData = { song_title, artist, album, genre, year_release };
-    fetch("http://localhost:1111/api/songs", {
+    fetch("https://semis-backend.onrender.com/api/songs", {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
 
 function getSongs() {
     let html = "";
-    fetch('http://localhost:1111/api/songs', { mode: 'cors' })
+    fetch('https://semis-backend.onrender.com/api/songs', { mode: 'cors' })
     .then(response => {
         console.log(response);
         return response.json();
@@ -65,7 +65,7 @@ function getSongs() {
 //DELETE
 function deleteSong(id) {
     if (confirm("Are you sure you want to delete this song?")) {
-        fetch("http://localhost:1111/api/songs", {
+        fetch("https://semis-backend.onrender.com/api/songs", {
             method: 'DELETE',
             body: JSON.stringify({ id }),
             headers: { "Content-Type": "application/json" },
@@ -82,7 +82,7 @@ function deleteSong(id) {
 
 //search
 function updateSong(id) {
-    fetch(`http://localhost:1111/api/songs/${id}`)
+    fetch(`https://semis-backend.onrender.com/api/songs/${id}`)
     .then(response => response.json())
     .then(data => {
         document.querySelector("#song_title").value = data[0].song_title;
@@ -103,7 +103,7 @@ update.addEventListener('click', () => {
     let year_release = document.querySelector("#year_release").value;
     let id = document.querySelector("#ID").value;
     let formData = { song_title, artist, album, genre, year_release, id };
-    fetch(`http://localhost:1111/api/songs`, {
+    fetch(`https://semis-backend.onrender.com/api/songs`, {
         method: 'PUT',
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
