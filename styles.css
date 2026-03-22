@@ -139,7 +139,7 @@ body {
 
 #main-header {
   display: flex; align-items: flex-end; justify-content: space-between;
-  padding: 40px 32px 20px; flex-shrink: 0;
+  padding: 10px 32px 20px; flex-shrink: 0;
 }
 
 #main-header h1 {
