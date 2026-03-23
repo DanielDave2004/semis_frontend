@@ -48,11 +48,11 @@ function getSongs() {
                 </div>
                 <div class="col-year-cell">${element.year_release}</div>
                 <div class="col-actions-cell">
-                    <a class="btn-delete" href="javascript:void(0)" onClick="deleteSong(${element.id})" title="Delete">
-                        <i class="fas fa-trash"></i>
-                    </a>
                     <a class="btn-edit" href="javascript:void(0)" onClick="updateSong(${element.id})" title="Edit">
                         <i class="fas fa-pen"></i>
+                    </a>
+                    <a class="btn-delete" href="javascript:void(0)" onClick="deleteSong(${element.id})" title="Delete">
+                        <i class="fas fa-trash"></i>
                     </a>
                 </div>
             </div>`;
